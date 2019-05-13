@@ -27,16 +27,25 @@ myresult1 = mycursor.fetchall()
 
 for x in myresult1: 
     print("This order requires product number {} and the quantity required is {}".format(x[0], x[1]))
-    #product_id = x[0]
-    #quantity = x[1]
+    product_id = x[0]
+    quantity = x[1]
 
 # UPDATE Commands for the algorithm
 
 # Updating order_items - Take the product_id check all elements in column product_id and make the quantity of it to 0 
-#command1 = "UPDATE order_items SET quantity = 0 WHERE product_id = {}".format(product_id)
+command1 = "UPDATE order_items SET quantity = 9999 WHERE product_id = {}".format(product_id)
+mycursor.execute(command1)
+mydb.commit()
 
 # Updating orders - Check if quantity of any order_id is 0 then decrement no_products in orders table
 
+command2 = "SELECT order_id  FROM order_items WHERE quantity = 9999"
+mycursor.execute(command2)
+myresult2 = mycursor.fetchall()
+for x in myresult2:
+    print(x)
+    order = x
+    
 # Updating products - Check if quantity is 0 for any product_id then decrement order_quantity by one and total_quantity by previous quantity
 
 # Exit Condition - no_products is 999 for each id in orders 
