@@ -13,7 +13,7 @@ The Python Files connect to mysql server
 3. Pip Install module mysql-connector
 4. Create a user and database for usage
 5. Create tables with same attributes as shown in the image [.jpeg file] 
-6. Foreign keys 
-      (i)  order_items.order_id to orders.id
+6. Foreign keys <br/>
+      (i)  order_items.order_id to orders.id <br/>
       (ii) order_items.product_id to product.id
  
